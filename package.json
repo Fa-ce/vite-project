@@ -1,0 +1,47 @@
+{
+    "name": "vite-vue-admin",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview",
+        "format": "prettier --write \"src/**/*.{js,vue,json}\" \"*.{js,vue,json}\" ",
+        "format:lint": "prettier --c \"src/**/*.{js,vue,json}\""
+    },
+    "dependencies": {
+        "@element-plus/icons-vue": "^2.3.1",
+        "axios": "^1.7.7",
+        "dayjs": "^1.11.13",
+        "echarts": "^5.5.1",
+        "element-plus": "^2.8.1",
+        "nprogress": "^0.2.0",
+        "pinia": "^2.2.2",
+        "qs": "^6.13.0",
+        "reset.css": "^2.0.2",
+        "vue": "^3.4.37",
+        "vue-router": "^4.4.3"
+    },
+    "devDependencies": {
+        "@faker-js/faker": "^8.4.1",
+        "@vitejs/plugin-vue": "^5.1.2",
+        "@vitejs/plugin-vue-jsx": "^4.0.1",
+        "eslint": "^8.57.0",
+        "eslint-config-prettier": "^9.1.0",
+        "eslint-config-standard": "^17.1.0",
+        "eslint-plugin-import": "^2.29.1",
+        "eslint-plugin-n": "^16.6.2",
+        "eslint-plugin-prettier": "^5.2.1",
+        "eslint-plugin-promise": "^6.6.0",
+        "eslint-plugin-vue": "^9.27.0",
+        "prettier": "^3.3.3",
+        "sass": "^1.77.8",
+        "unplugin-auto-import": "^0.18.2",
+        "unplugin-vue-components": "^0.27.4",
+        "vite": "^5.4.1",
+        "vite-plugin-fake-server": "^2.1.2",
+        "vite-plugin-vue-setup-extend": "^0.4.0"
+    },
+    "packageManager": "pnpm@10.12.4+sha512.5ea8b0deed94ed68691c9bad4c955492705c5eeb8a87ef86bc62c74a26b037b08ff9570f108b2e4dbd1dd1a9186fea925e527f141c648e85af45631074680184"
+}
