@@ -10,38 +10,38 @@ const routes = [
             {
                 path: '/welcome',
                 name: 'Welcome',
-                component: () => import('@/views/Welcome.vue'),
+                component: () => import('@/views/Welcome/Welcome.vue'),
             },
             {
                 path: '404',
                 name: '404',
-                component: () => import('@/views/404/index.vue'),
+                component: () => import('@/views/Error/404.vue'),
             },
             {
                 path: 'redirect/:pathMatch(.*)*',
                 name: 'redirect', // 重定向
-                component: () => import('@/views/redirect/index.vue'),
+                component: () => import('@/layout/index.vue'),
             },
         ],
     },
-    {
-        path: '/Home',
-        name: 'Home',
-        component: () => import('@/views/Home.vue'),
-    },
-    {
-        path: '/about',
-        name: 'About',
-        component: () => import('@/views/About.vue'),
-    },
+    // {
+    //     path: '/Home',
+    //     name: 'Home',
+    //     component: () => import('@/views/Home.vue'),
+    // },
+    // {
+    //     path: '/about',
+    //     name: 'About',
+    //     component: () => import('@/views/About.vue'),
+    // },
     {
         path: '/login',
         name: 'Login',
-        component: () => import('@/views/Login.vue'),
+        component: () => import('@/views/Login/Index.vue'),
     },
 ]
 const router = createRouter({
-    history: createWebHistory(process.env.BASE_URL),
+    history: createWebHistory(),
     routes, // 路由配置
 })
 

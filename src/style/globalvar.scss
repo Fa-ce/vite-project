@@ -1,0 +1,19 @@
+$primaryColor: #1F76F9;
+$gAppHeaderHeight: 50px;
+$gAppSiderWidth: 200px;
+$gAppSiderWidthCollapse: 64px;
+$gAppTagHeight: 32px;
+
+@forward 'element-plus/theme-chalk/src/common/var.scss' with (
+  $colors: (
+    'primary': (
+      'base': $primaryColor
+    )
+  ),
+  $input: (
+    'border-radius': 0
+  ),
+  $border-radius: (
+    'base': 0
+  ),
+);

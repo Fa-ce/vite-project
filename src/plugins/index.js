@@ -1,6 +1,6 @@
 import { ElIcon } from 'element-plus'
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
-const components = import.meta.glob('@components/*/index.js', { eager: true })
+const components = import.meta.glob('@/components/*/index.js', { eager: true })
 
 export default {
     install(app) {
@@ -11,9 +11,7 @@ export default {
 
         Object.keys(components).forEach((key) => {
             const component = components[key].default
-            if (component && component.name) {
-                app.component(component.name, component)
-            }
+            app.component(component.name, component)
         })
     },
 }

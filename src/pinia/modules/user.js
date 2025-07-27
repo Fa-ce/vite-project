@@ -1,5 +1,5 @@
 import userApi, { logout } from '@/api/user'
-const { isLocal } = require('@/utils/helper')
+import { isLocal } from '@/utils/helper'
 import {
     getToken,
     setToken,

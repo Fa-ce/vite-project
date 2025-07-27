@@ -1,5 +1,5 @@
 // 引入axios库
-const axios = require('axios')
+import axios from 'axios'
 
 import { getToken } from '@/utils/webStorage'
 import qs from 'qs'
@@ -98,3 +98,5 @@ service.interceptors.response.use(
         return Promise.reject(error)
     }
 )
+
+export default service

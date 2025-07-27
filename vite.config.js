@@ -43,15 +43,17 @@ export default defineConfig({
         ]),
     ],
     resolve: {
-        alias: {
-            find: '/@', // 要被替换的路径
-            replacement: resolve(__dirname, 'src'), // 替换成的路径
-        },
+        alias: [
+            {
+                find: '@', // 要被替换的路径
+                replacement: resolve(__dirname, 'src'), // 替换成的路径
+            },
+        ],
     },
     css: {
         preprocessorOptions: {
             scss: {
-                additionalData: `@use "@/assets/styles/element/index.scss" as * `, // 引入全局样式变量
+                additionalData: '@use "@/style/globalvar.scss" as *;', // 引入全局样式变量
             },
         },
     },

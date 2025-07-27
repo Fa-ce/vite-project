@@ -26,3 +26,9 @@ export function getUserInfo(params) {
         params,
     })
 }
+
+export default {
+    login,
+    logout,
+    getUserInfo,
+}

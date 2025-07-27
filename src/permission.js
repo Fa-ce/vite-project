@@ -1,5 +1,5 @@
-import router from '@router'
-import { useUserStore } from '@/store/modules/user'
+import router from '@/router'
+import { useUserStore } from '@/pinia'
 import { getToken } from './utils/webStorage'
 import NProgress from 'nprogress' // progress bar
 
