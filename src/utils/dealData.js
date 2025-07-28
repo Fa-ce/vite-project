@@ -6,22 +6,22 @@
  * @return {*}
  */
 export function flattenTree(treeData, childrenKey = 'children') {
-    if (!Array.isArray(treeData)) {
-        throw new Error('Input must be an array')
-    }
-    const result = []
-    function traverse(arr) {
-        arr.forEach((item) => {
-            const { [childrenKey]: children, ...data } = item // 将children属性从对象中删除，并返回剩余的属性
-            result.push(data) // 将当前节点(不包含子节点)添加到结果数组中
-            if (children && Array.isArray(children)) {
-                traverse(children) // 递归处理子节点
-            }
-        })
-    }
-    traverse(treeData) // 开始遍历树形数据
-    // 返回扁平化后的结果
-    return result
+	if (!Array.isArray(treeData)) {
+		throw new Error('Input must be an array')
+	}
+	const result = []
+	function traverse(arr) {
+		arr.forEach((item) => {
+			const { [childrenKey]: children, ...data } = item // 将children属性从对象中删除，并返回剩余的属性
+			result.push(data) // 将当前节点(不包含子节点)添加到结果数组中
+			if (children && Array.isArray(children)) {
+				traverse(children) // 递归处理子节点
+			}
+		})
+	}
+	traverse(treeData) // 开始遍历树形数据
+	// 返回扁平化后的结果
+	return result
 }
 
 /**
@@ -34,27 +34,22 @@ export function flattenTree(treeData, childrenKey = 'children') {
  * @return {*[]} 返回清洗后的树形数据
  */
 
-export function cleanTreeData(
-    tree,
-    callback,
-    childrenKey = 'children',
-    newChildrenKey = 'children'
-) {
-    // 检查输入是否为数组
-    if (!Array.isArray(tree)) {
-        throw new Error('Input must be an array')
-    }
-    const result = []
-    function traverse(arr) {
-        arr.forEach((item) => {
-            const { [childrenKey]: children, ...data } = item
-            const newItem = callback ? callback(data) : data
-            if (children && Array.isArray(children)) {
-                traverse(children)
-            }
-            result.push(newItem)
-        })
-    }
-    traverse(tree)
-    return result
+export function cleanTreeData(tree, callback, childrenKey = 'children', newChildrenKey = 'children') {
+	// 检查输入是否为数组
+	if (!Array.isArray(tree)) {
+		throw new Error('Input must be an array')
+	}
+	const result = []
+	function traverse(arr) {
+		arr.forEach((item) => {
+			const { [childrenKey]: children, ...data } = item
+			const newItem = callback ? callback(data) : data
+			if (children && Array.isArray(children)) {
+				traverse(children)
+			}
+			result.push(newItem)
+		})
+	}
+	traverse(tree)
+	return result
 }
