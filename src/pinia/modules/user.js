@@ -41,11 +41,12 @@ const useUserStore = defineStore('user', {
 					// 动态加载路由
 					this.routes = innerRoutes
 					flattenTree(this.routes).forEach((item) => {
-						item.addRoute('layout', item)
+						router.addRoute('layout', item)
 					})
 					resolve(this.userInfo)
 				} else {
 					// TODO: 从服务器获取用户信息
+					console.log('api: getUserInfo >> ')
 				}
 			})
 		},

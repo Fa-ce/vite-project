@@ -19,12 +19,7 @@ export default defineConfig({
 		AutoImport({
 			imports: ['vue', 'vue-router', 'pinia'],
 			// element-plus 组件自动按需引入
-			resolvers: [
-				ElementPlusResolver({
-					importStyle: 'sass', // 引入样式
-					// 这里可以配置其他 Element Plus 的选项
-				}),
-			],
+			resolvers: [ElementPlusResolver()],
 			eslintrc: {
 				enable: true, // 启用 ESLint 自动导入
 			},
@@ -35,12 +30,19 @@ export default defineConfig({
 				resolvers: [
 					ElementPlusResolver({
 						importStyle: 'sass', // 引入样式
+						// 这里可以配置其他 Element Plus 的选项
 					}),
 				],
 				// dirs: ["src/components"], // 组件目录
 				// directoryAsNamespace: true, // 目录作为命名空间
 			},
 		]),
+		vitePluginFakeServer({
+			logger: false,
+			include: 'mock',
+			infixName: false,
+			enableProd: true,
+		}),
 	],
 	resolve: {
 		alias: [

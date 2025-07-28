@@ -29,31 +29,29 @@ router.beforeEach(async (to, from, next) => {
 	// 跳转到登录页面,不同用户权限不同，重新加载路由
 	if (to.path === '/login') {
 		routerIsLoaded = false
-		next()
+		return next()
 	}
 	// 白名单直接放行
 	if (whiteList.includes(to.path)) {
-		next()
-		return
+		return next()
 	}
 	// 判断是否需要登录
 	if (getToken()) {
 		// 判断是否加载路由
 		if (routerIsLoaded) {
 			if (to.matched.length) {
-				next()
+				return next()
 			} else {
 				next('/404')
 			}
 		} else {
 			// 路由未加载，则等待路由加载完成后，进行下一步
 			await loadRoutes(to, from, next)
-			next(to, from, next)
+			return next(to)
 		}
 	} else {
 		// 未登录，跳转到登录页面
-		// next("/login");
-		next('')
+		return next('/login')
 	}
 })
 router.afterEach(() => {

@@ -10,7 +10,7 @@ const routes = [
 			{
 				path: '/welcome',
 				name: 'Welcome',
-				component: () => import('@/views/Welcome/Welcome.vue'),
+				component: () => import('@/views/Welcome/Index.vue'),
 			},
 			{
 				path: '404',

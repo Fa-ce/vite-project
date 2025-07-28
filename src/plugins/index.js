@@ -1,3 +1,6 @@
+import ElementPlus from 'element-plus'
+import 'element-plus/dist/index.css'
+
 import { ElIcon } from 'element-plus'
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 const components = import.meta.glob('@/components/*/index.js', { eager: true })
@@ -13,5 +16,7 @@ export default {
 			const component = components[key].default
 			app.component(component.name, component)
 		})
+
+		app.use(ElementPlus)
 	},
 }

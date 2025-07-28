@@ -2,6 +2,8 @@
 	<div>welcome</div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup>
+	import { onMounted } from 'vue'
+</script>
 
 <style scoped></style>
